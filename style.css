@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Send+Flowers&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #f686bd;
+    font-family: 'Urbanist', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    width: 100%;
+    font-size: 4.25em;
+    font-family: 'Send Flowers', cursive;
+}
+
+.description {
+    text-align: center;
+    font-size: 2em;
+    width: 70%;
+}
+
+#description-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#description-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#question-box {
+    display: none;
+}
+
+button {
+    padding: 1rem 1.25rem;
+    background-color: #84F585;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 2.25em;
+}
+
+.mt {
+    margin-top: 2em;
+}
