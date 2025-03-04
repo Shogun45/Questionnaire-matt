@@ -44,15 +44,20 @@ button {
     border-radius: 0.5rem;
     font-size: 56px;
     color: black;
+    margin-top: 96px;
+}
+
+input {
+    margin-top: 96px;
+    padding: 1rem 1.5rem;
+    font-size: 2.5rem;
+    border: 0;
+    border-radius: 0.5rem;
 }
 
 #start-box {
     width: 100%;
     height: auto;
-}
-
-#start-button {
-    margin-top: 96px;
 }
 
 .description-wrapper {
@@ -65,4 +70,25 @@ button {
     font-size: 24px;
     text-align: center;
     width: 80%;
+}
+
+#question-box {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.question-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#feedback-text {
+    color: red;
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
 }

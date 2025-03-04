@@ -15,7 +15,7 @@
 
     <main>
         <div id="start-box">
-            <div class="description-wrapper">
+            <center>
                 <div class="description">
                     Je suis tellement imbu de moi même que je t'ai préparé ce petit questionnaire pour vérifier tes
                     connaissances !
@@ -24,13 +24,25 @@
                     Échoue, et je passerai en mode diva insupportable. Réussis, et... bon, ça changera pas grand-chose,
                     mais au moins tu pourras te vanter d’avoir survécu à ce test.
                 </p>
-            </div>
-            <center>
+
                 <button id="start-button">Commencer</button>
             </center>
         </div>
 
-        <div id="question-box"></div>
+        <div id="question-box">
+
+            <center>
+                <p class="description" id="question-text"></p>
+
+                <input type="text" id="answer-input">
+
+                <button id="valid-button">Vérifier la réponse</button>
+
+                <p id="feedback-text"></p>
+
+                <ul id="hint-list"></ul>
+            </center>
+        </div>
     </main>
 
     <footer>
