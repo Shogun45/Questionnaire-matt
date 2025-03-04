@@ -16,10 +16,12 @@ const questions = [
     new Question("C'est quoi mes fleurs préférées ?", "Les clochettes", ["Souviens-toi des abeilles", "Ce sont des fleurs violettes"]),
     new Question("Est-ce que je suis beau ?", "Oui", ["Si t'as dit non, c'est que tu me mens"]),
     new Question("De qui suis-je amoureux ?", "Lisa", ["Elle a de beaux yeux bleus", "Elle vit à Laon", "Elle pratique l'atrophication des muscles"]),
+    new Question("", "", [""])
 ];
 
 let currentIndex = 0;
 let hintIndex = 0;
+let nbErreur = 0;
 
 let startBox = document.getElementById("start-box");
 let startButton = document.getElementById("start-button");
@@ -62,6 +64,7 @@ validButton.addEventListener("click", function () {
             hintList.appendChild(hint);
 
             hintIndex++;
+            nbErreur++;
         } else if (hintIndex == questions[currentIndex].hint.length) {
             let hint = document.createElement('li');
 
@@ -69,6 +72,7 @@ validButton.addEventListener("click", function () {
             hintList.appendChild(hint);
 
             hintIndex++;
+            nbErreur++;
         }
     }
 });
