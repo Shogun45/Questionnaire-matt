@@ -16,15 +16,15 @@ const questions = [
 
 let currentIndex = 0;
 
-let startBox = window.getElementById("start-box");
-let startButton = window.getElementById("start-button");
+let startBox = document.getElementById("start-box");
+let startButton = document.getElementById("start-button");
 
-let questionBox = window.getElementById("question-box");
-let questionText = window.getElementById("question-text");
-let answerInput = window.getElementById("answer-input");
-let feedBackText = window.getElementById("feedback-text");
+let questionBox = document.getElementById("question-box");
+let questionText = document.getElementById("question-text");
+let answerInput = document.getElementById("answer-input");
+let feedBackText = document.getElementById("feedback-text");
 
-let victoryBox = window.getElementById("victory-box");
+let victoryBox = document.getElementById("victory-box");
 
 function displayQuestion() {
     if (currentIndex < questions.length) {
