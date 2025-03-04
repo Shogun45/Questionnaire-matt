@@ -4,6 +4,10 @@ html,
 body {
     padding: 0;
     margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
 }
 
 body {
@@ -11,34 +15,26 @@ body {
     font-family: 'Urbanist', sans-serif;
 }
 
+header {
+    width: 100%;
+}
+
+main {
+    flex: 1;
+    width: 100%;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    font-size: 1.75rem;
+}
+
 h1 {
     text-align: center;
-    width: 100%;
-    font-size: 4.25em;
     font-family: 'Send Flowers', cursive;
-}
-
-.description {
-    text-align: center;
-    font-size: 2em;
-    width: 70%;
-}
-
-#description-container {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-}
-
-#description-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-}
-
-#question-box {
-    display: none;
+    font-size: 4.5rem;
 }
 
 button {
@@ -46,9 +42,27 @@ button {
     background-color: #84F585;
     border: none;
     border-radius: 0.5rem;
-    font-size: 2.25em;
+    font-size: 56px;
+    color: black;
 }
 
-.mt {
-    margin-top: 2em;
+#start-box {
+    width: 100%;
+    height: auto;
+}
+
+#start-button {
+    margin-top: 96px;
+}
+
+.description-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.description {
+    font-size: 24px;
+    text-align: center;
+    width: 80%;
 }

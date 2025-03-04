@@ -4,35 +4,39 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
     <title>Lisouille</title>
 </head>
 
 <body>
-    <div id="start-box">
-        <h1>Questionnaire sur ma personne </h1>
-        <div id="description-container">
-            <div id="description-wrapper">
+    <header>
+        <h1>Questionnaire sur ma personne</h1>
+    </header>
+
+    <main>
+        <div id="start-box">
+            <div class="description-wrapper">
+                <div class="description">
+                    Je suis tellement imbu de moi même que je t'ai préparé ce petit questionnaire pour vérifier tes
+                    connaissances !
+                </div>
                 <p class="description">
-                    Parce que je savais vraiment pas quoi faire j'ai fais ça et c'est pas fais en python !
+                    Échoue, et je passerai en mode diva insupportable. Réussis, et... bon, ça changera pas grand-chose,
+                    mais au moins tu pourras te vanter d’avoir survécu à ce test.
                 </p>
-                <p class="description">
-                    Bon courage Bibiche !
-                </p>
-                <p class="description">
-                    (et oui c'est pas super jolie comme site mais je suis pas graphiste)
-                </p>
-                <button id="start-button" class="mt">Commencer</button>
             </div>
+            <center>
+                <button id="start-button">Commencer</button>
+            </center>
         </div>
-    </div>
 
-    <div id="question-box">
-        <p id="question-text"></p>
-        <input type="text" id="answer-input">
-        <p id="feedback-text"></p>
-    </div>
+        <div id="question-box"></div>
+    </main>
 
-    <script src="script.js" defer></script>
+    <footer>
+        <p>&copy; 2025 - Fait avec amour ❤️</p>
+        <p>(et aussi parce que je savais pas quoi faire)</p>
+    </footer>
 </body>
 
 </html>
