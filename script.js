@@ -7,6 +7,7 @@ class Question {
 }
 
 const questions = [
+    /*
     new Question("Quelle est ma date de naissance ?", "17 juillet 2000", ["Je suis cancer", "Même année que toi", "Le 17 wesh"]),
     new Question("Combien de groupes d'amis j'ai ?", "3", ["Le skate", "Le bac", "Les vieux"]),
     new Question("Comment s'appelle ma Lilie ?", "Alexis", ["Alias ch'Pum", "En vrai t'abuses"]),
@@ -16,7 +17,13 @@ const questions = [
     new Question("C'est quoi mes fleurs préférées ?", "Les clochettes", ["Souviens-toi des abeilles", "Ce sont des fleurs violettes"]),
     new Question("Est-ce que je suis beau ?", "Oui", ["Si t'as dit non, c'est que tu me mens"]),
     new Question("De qui suis-je amoureux ?", "Lisa", ["Elle a de beaux yeux bleus", "Elle vit à Laon", "Elle pratique l'atrophication des muscles"]),
-    new Question("", "", [""])
+    */
+    new Question("Quel taille je fais ?", "1,83", ["Plus grand que toi déjà", "51 cm de plus que Mimie Mathy"]),
+    new Question("C'est quoi mes autres prénoms ?", "André Edouard", ["Andros", "Le prénom du personnage de Robert Pattinson dans Twilight mais francisais"]),
+    new Question("Quelle est mon film préférée ?", "Matrix", ["Les machines bouhouhouh", "Monde virtuel"]),
+    new Question("Les prénoms de mon frère et ma soeur ?", "Alexandre Elise", ["En russe le nom court serait Sacha", "Eglise sans le G"]),
+    new Question("Ma grande passion ?", "Coder", [""]),
+    new Question("", "")
 ];
 
 let currentIndex = 0;
@@ -32,6 +39,8 @@ let answerInput = document.getElementById("answer-input");
 let feedBackText = document.getElementById("feedback-text");
 let validButton = document.getElementById("valid-button");
 let hintList = document.getElementById("hint-list");
+
+questionBox.style.display = "none";
 
 function displayQuestion() {
     if (currentIndex < questions.length) {
