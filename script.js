@@ -35,9 +35,7 @@ let startButton = document.getElementById("start-button");
 
 let questionBox = document.getElementById("question-box");
 let questionText = document.getElementById("question-text");
-let answerInput = document.getElementById("answer-input");
 let feedBackText = document.getElementById("feedback-text");
-let validButton = document.getElementById("valid-button");
 let hintList = document.getElementById("hint-list");
 
 questionBox.style.display = "none";
@@ -59,6 +57,7 @@ startButton.addEventListener("click", function () {
     displayQuestion();
 });
 
+/*
 validButton.addEventListener("click", function () {
     if (answerInput.value.toLowerCase() === questions[currentIndex].answer) {
         currentIndex++;
@@ -85,4 +84,5 @@ validButton.addEventListener("click", function () {
         }
     }
 });
+*/
 

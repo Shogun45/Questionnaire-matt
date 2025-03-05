@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Send+Flowers&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {}
+
 .bg-pink {
     background-color: #fda8d1 !important;
 }
@@ -27,4 +29,8 @@
     --bs-btn-disabled-color: #fff;
     --bs-btn-disabled-bg: #64c964;
     --bs-btn-disabled-border-color: #64c964;
+}
+
+.border-top {
+    --bs-border-color: rgb(44, 44, 44);
 }
