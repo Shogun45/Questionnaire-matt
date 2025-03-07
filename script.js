@@ -73,7 +73,7 @@ const questions = [
     ], 2, 2)
 ];
 
-let currentIndex = 6;   // Index de la question en cours
+let currentIndex = 0;   // Index de la question en cours
 let hintIndex = 0;      // Index de l'indice en cours
 let initialLife = 3;    // PDV initial
 let actualLife = initialLife;     // PDV actuel
@@ -92,6 +92,8 @@ const lifeBox = document.getElementById("life-box");
 const victoryBox = document.getElementById("victory-box");
 const defeatBox = document.getElementById("defeat-box");
 
+const waitTime = 2000;
+
 let answerButtons = [];
 
 questionBox.style.display = "none";
@@ -103,7 +105,6 @@ function displayQuestion() {
     answersBox.innerHTML = "";
 
     if (currentIndex < questions.length) {
-        console.log('ici');
         let question = questions[currentIndex];
 
         questionText.textContent = question.question;
@@ -163,18 +164,17 @@ function handleClick(button) {
     });
 
     if (button.classList.contains("valid")) {
-        console.log("bravo");
+        setTimeout(function () { displayQuestion(); }, waitTime);
     }
     else {
-        console.log("t a chier");
         actualLife--;
         drawLife();
+        if (actualLife === 0)
+            setTimeout(function () { displayDefeat(); }, waitTime);
+        else {
+            setTimeout(function () { displayQuestion(); }, waitTime);
+        }
     }
-
-    // ATTENDRE 5 SEC AVANT LA PROCHAINE QUESTION
-    setTimeout(function () {
-        displayQuestion();
-    }, 2000);
 }
 
 function drawLife() {
@@ -202,6 +202,11 @@ function drawLife() {
         // afficher l'image  <link rel="preload" href="./img/heart_empty.png" as="image">
         createHeart('./img/heart_empty.png');
     }
+}
+
+function displayDefeat() {
+    questionBox.style.display = "none";
+    defeatBox.style.display = "block";
 }
 
 startButton.addEventListener("click", function () {
