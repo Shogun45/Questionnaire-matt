@@ -1,7 +1,7 @@
 {
     "name": "Lisouille",
     "short_name": "Lis.",
-    "start_url": "/",
+    "start_url": "/lisouille",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#000000",
