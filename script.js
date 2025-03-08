@@ -82,6 +82,27 @@ const questions = [
         { text: 'Les clochettes', valid: true },
         { text: 'Les pissenlits', valid: false },
     ], 2, 2),
+    new Question("Est-ce que j'ai confiance en moi ?", [
+        { text: 'Oui', valid: false },
+        { text: 'Non', valid: true },
+    ], 2, 2),
+    new Question("La date de notre premier baiser ?", [
+        { text: '10/02/2025', valid: false },
+        { text: '11/02/2025', valid: true },
+        { text: '12/02/2025', valid: false },
+    ], 2, 2),
+    new Question("Si je pouvais être un super héro, je serais ?", [
+        { text: 'Superman', valid: true },
+        { text: 'Iron man', valid: true },
+        { text: 'Flash', valid: true },
+        { text: 'Invincible', valid: true },
+        { text: 'Spider-man', valid: true },
+        { text: 'Batman', valid: true },
+    ], 3, 2),
+    new Question("J'ai déjà fais un rêve érotique avec toi ?", [
+        { text: 'Oui', valid: true },
+        { text: 'Non', valid: false },
+    ], 2, 1),
     new Question("Qu'est-ce que j'adore chez toi ?", [
         { text: 'Tes yeux', valid: true },
         { text: 'Ton sourire', valid: true },
@@ -102,7 +123,7 @@ const questions = [
     ], 2, 2),
 ];
 
-let currentIndex = 9;   // Index de la question en cours
+let currentIndex = 0;   // Index de la question en cours
 let hintIndex = 0;      // Index de l'indice en cours
 let initialLife = 3;    // PDV initial
 let actualLife = initialLife;     // PDV actuel
@@ -122,6 +143,8 @@ const footer = document.getElementById("footer");
 
 const victoryBox = document.getElementById("victory-box");
 const defeatBox = document.getElementById("defeat-box");
+
+const secondChanceButton = document.getElementById("second-chance-button");
 
 const waitTime = 2000;
 
@@ -244,6 +267,14 @@ startButton.addEventListener("click", function () {
     startBox.style.display = "none";
     questionBox.style.display = "block";
     footer.style.display = "none";
+    displayQuestion();
+    drawLife();
+});
+
+secondChanceButton.addEventListener("click", function () {
+    actualLife = initialLife;
+    defeatBox.style.display = "none";
+    questionBox.style.display = "block";
     displayQuestion();
     drawLife();
 });
