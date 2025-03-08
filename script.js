@@ -12,7 +12,6 @@ class Question {
 }
 
 /*const questions = [
-    new Question("Combien de groupes d'amis j'ai ?", "3", ["Le skate", "Le bac", "Les vieux"]),
     new Question("C'est quoi mes fleurs préférées ?", "Les clochettes", ["Souviens-toi des abeilles", "Ce sont des fleurs violettes"]),
     new Question("Est-ce que je suis beau ?", "Oui", ["Si t'as dit non, c'est que tu me mens"]),
     new Question("De qui suis-je amoureux ?", "Lisa", ["Elle a de beaux yeux bleus", "Elle vit à Laon", "Elle pratique l'atrophication des muscles"]),
@@ -25,14 +24,14 @@ class Question {
 ];*/
 
 const questions = [
-    new Question("Quel taille je fais ?", [
+    new Question("Quelle taille fais-je ?", [
         { text: "1,81m", valid: false },
         { text: "1,82m", valid: false },
         { text: "1,83m", valid: true },
         { text: "1,84m", valid: false },
         { text: "1,85m", valid: false },
     ], 3, 2, []),
-    new Question("Quel est ma date de naissance ?", [
+    new Question("Quelle est ma date de naissance ?", [
         { text: "17/07/2000", valid: true },
         { text: "17/06/2000", valid: false },
         { text: "21/01/2000", valid: false },
@@ -52,25 +51,55 @@ const questions = [
         { text: "20", valid: false },
         { text: "40", valid: true },
     ], 3, 2),
-    new Question("En qui je crois ?", [
+    new Question("En qui est-ce que je crois ?", [
         { text: "Dieu", valid: false },
         { text: "Toi", valid: true },
         { text: "Moi", valid: true },
         { text: "JCVD", valid: false },
     ], 2, 2),
-    new Question("Sur quelle musique de Bob Dylan est-ce qu'on s'est embrassés pour la première fois ?", [
+    new Question("Sur quelle musique de Bob Dylan nous sommes-nous embrassés pour la première fois ?", [
         { text: "Blowin' in the Wind", valid: false },
         { text: "Pelican", valid: false },
         { text: "Lay Lady Lay", valid: false },
         { text: "Hurricane", valid: true },
         { text: "Like A Rolling Stone", valid: false },
     ], 3, 2),
-    new Question("Quelle série je regarde par défaut ?", [
+    new Question("Quelle série est-ce que je regarde par défaut ?", [
         { text: "Matrix", valid: false },
         { text: "Rick & Morty", valid: true },
-        { text: "The walking dead", valid: false },
-        { text: "Les Simpsons", valid: false },
-    ], 2, 2)
+        { text: "The Walking Dead", valid: false },
+        { text: "Les Simpson", valid: false },
+    ], 2, 2),
+    new Question("Combien de groupes d'amis ai-je ?", [
+        { text: '1', valid: false },
+        { text: '2', valid: false },
+        { text: '3', valid: true },
+        { text: '4', valid: false },
+    ], 2, 2),
+    new Question("Quelles sont mes fleurs préférées ?", [
+        { text: 'Les tulipes', valid: false },
+        { text: 'Les roses', valid: false },
+        { text: 'Les clochettes', valid: true },
+        { text: 'Les pissenlits', valid: false },
+    ], 2, 2),
+    new Question("Qu'est-ce que j'adore chez toi ?", [
+        { text: 'Tes yeux', valid: true },
+        { text: 'Ton sourire', valid: true },
+        { text: 'Ton rire', valid: true },
+        { text: 'Ton humour', valid: true },
+        { text: 'Ton boule', valid: true },
+        { text: 'Ta gentillesse', valid: true },
+        { text: 'Tes cheveux dans ma bouche', valid: true },
+        { text: 'Tes câlins', valid: true },
+        { text: 'Ta chaleur', valid: true },
+        { text: 'Ton charisme', valid: true },
+        { text: 'Ton élégance', valid: true },
+        { text: 'Tes bisous', valid: true },
+    ], 8, 2),
+    new Question("Est-ce que j'ai envie de t'embrasser là, maintenant, tout de suite, incessamment sous peu ?", [
+        { text: 'Oui', valid: true },
+        { text: 'Non', valid: false },
+    ], 2, 2),
 ];
 
 let currentIndex = 0;   // Index de la question en cours
@@ -88,6 +117,8 @@ const questionText = document.getElementById("question-text");
 const answersBox = document.getElementById("answers-box");
 const feedBackText = document.getElementById("feedback-text");
 const lifeBox = document.getElementById("life-box");
+
+const footer = document.getElementById("footer");
 
 const victoryBox = document.getElementById("victory-box");
 const defeatBox = document.getElementById("defeat-box");
@@ -212,6 +243,7 @@ function displayDefeat() {
 startButton.addEventListener("click", function () {
     startBox.style.display = "none";
     questionBox.style.display = "block";
+    footer.style.display = "none";
     displayQuestion();
     drawLife();
 });
