@@ -102,7 +102,7 @@ const questions = [
     ], 2, 2),
 ];
 
-let currentIndex = 0;   // Index de la question en cours
+let currentIndex = 9;   // Index de la question en cours
 let hintIndex = 0;      // Index de l'indice en cours
 let initialLife = 3;    // PDV initial
 let actualLife = initialLife;     // PDV actuel
