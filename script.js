@@ -1,12 +1,11 @@
 class Question {
-    constructor(question, answers, x = 0, y = 0, hint = []) {
+    constructor(question, answers, x = 0) {
         this.question = question;
         this.answers = answers;
-        this.hint = hint;
         this.x = x;
-        this.y = y;
+        this.y = 2;
 
-        if ((x * y) < answers.length)
+        if ((x * 2) < answers.length)
             console.error(`For question ${question} x * y not equal to answers length`);
     }
 }
@@ -30,19 +29,19 @@ const questions = [
         { text: "1,83m", valid: true },
         { text: "1,84m", valid: false },
         { text: "1,85m", valid: false },
-    ], 3, 2, []),
+    ], 3),
     new Question("Quelle est ma date de naissance ?", [
         { text: "17/07/2000", valid: true },
         { text: "17/06/2000", valid: false },
         { text: "21/01/2000", valid: false },
-    ], 2, 2),
+    ], 2),
     new Question("Quel est le prénom de ma Lilie ?", [
         { text: "Antonin", valid: false },
         { text: "Ryan", valid: false },
         { text: "Aurélien", valid: false },
         { text: "Alexis", valid: true },
         { text: "Thomas", valid: false },
-    ], 3, 2),
+    ], 3),
     new Question("Combien de nuances de Matthieu ?", [
         { text: "30", valid: false },
         { text: "42", valid: false },
@@ -50,47 +49,47 @@ const questions = [
         { text: "70", valid: false },
         { text: "20", valid: false },
         { text: "40", valid: true },
-    ], 3, 2),
+    ], 3),
     new Question("En qui est-ce que je crois ?", [
         { text: "Dieu", valid: false },
         { text: "Toi", valid: true },
         { text: "Moi", valid: true },
         { text: "JCVD", valid: false },
-    ], 2, 2),
+    ], 2),
     new Question("Sur quelle musique de Bob Dylan nous sommes-nous embrassés pour la première fois ?", [
         { text: "Blowin' in the Wind", valid: false },
         { text: "Pelican", valid: false },
         { text: "Lay Lady Lay", valid: false },
         { text: "Hurricane", valid: true },
         { text: "Like A Rolling Stone", valid: false },
-    ], 3, 2),
+    ], 3),
     new Question("Quelle série est-ce que je regarde par défaut ?", [
         { text: "Matrix", valid: false },
         { text: "Rick & Morty", valid: true },
         { text: "The Walking Dead", valid: false },
         { text: "Les Simpson", valid: false },
-    ], 2, 2),
+    ], 2),
     new Question("Combien de groupes d'amis ai-je ?", [
         { text: '1', valid: false },
         { text: '2', valid: false },
         { text: '3', valid: true },
         { text: '4', valid: false },
-    ], 2, 2),
+    ], 2),
     new Question("Quelles sont mes fleurs préférées ?", [
         { text: 'Les tulipes', valid: false },
         { text: 'Les roses', valid: false },
         { text: 'Les clochettes', valid: true },
         { text: 'Les pissenlits', valid: false },
-    ], 2, 2),
+    ], 2),
     new Question("Est-ce que j'ai confiance en moi ?", [
         { text: 'Oui', valid: false },
         { text: 'Non', valid: true },
-    ], 2, 2),
+    ], 2),
     new Question("La date de notre premier baiser ?", [
         { text: '10/02/2025', valid: false },
         { text: '11/02/2025', valid: true },
         { text: '12/02/2025', valid: false },
-    ], 2, 2),
+    ], 2),
     new Question("Si je pouvais être un super héro, je serais ?", [
         { text: 'Superman', valid: true },
         { text: 'Iron man', valid: true },
@@ -98,11 +97,69 @@ const questions = [
         { text: 'Invincible', valid: true },
         { text: 'Spider-man', valid: true },
         { text: 'Batman', valid: true },
-    ], 3, 2),
+    ], 3),
+    new Question("Quelle est ma boisson favorite ?", [
+        { text: "Coca", valid: true },
+        { text: "Sprite", valid: false },
+        { text: "Cyprine", valid: false },
+        { text: "Eau", valid: false },
+    ], 2),
+    new Question("Est-ce que j'aime être dans tes bras ?", [
+        { text: "Oui", valid: true },
+        { text: "Non", valid: false },
+    ], 2),
+    new Question("Quest ce que je souhaites avoir au fond de mon jardin ?", [
+        { text: "Un potager", valid: false },
+        { text: "Une foret", valid: false },
+        { text: "Un cimetière", valid: false },
+        { text: "Un rucher", valid: true },
+    ], 2),
+    new Question("Quelle est ma chanson préférée en ce moment (depuis plus d'un an le moment quand même) ?", [
+        { text: "Regarder les filles pleurer - Saez", valid: false },
+        { text: "The Rat - The Walkmen", valid: true },
+        { text: "Lose Yourself - Eminem", valid: false },
+        { text: "Souffle le vent - Odezenne", valid: false },
+    ], 2),
+    new Question("Où est-ce que j'aimerais partir en vacances avec toi ?", [
+        { text: "Espagne", valid: true },
+        { text: "Canada", valid: false },
+        { text: "Grèce", valid: false },
+        { text: "Islande", valid: false },
+    ], 2),
+    new Question("Quelle est ma pizza préférée ?", [
+        { text: "Margherita", valid: false },
+        { text: "Reine", valid: false },
+        { text: "Hawaïenne", valid: false },
+        { text: "4 Fromages", valid: true },
+    ], 2),
+    new Question("Quelles étaient les couleur de la voiture que tu m'as offerte a la st-Valentin ?", [
+        { text: "Rouge - Gris - Vert", valid: false },
+        { text: "Rouge - Bleu - Orange", valid: true },
+        { text: "Vert - Noir - Bleu", valid: false },
+        { text: "Bleu - Blanc - Rouge", valid: false },
+    ], 2),
+    new Question("C'est quoi mon idée pour un prochain tatouage ?", [
+        { text: "Une carte de UNO", valid: false },
+        { text: "Ton prénom", valid: false },
+        { text: "Un tortue ninja", valid: false },
+        { text: "Logo in utero", valid: true },
+    ], 2),
+    new Question("C'est quoi ma passion ultime ?", [
+        { text: "Coder", valid: true },
+        { text: "La branlette", valid: false },
+        { text: "Les vroom vroom mobile", valid: false },
+        { text: "D la réponse D", valid: false },
+    ], 2),
+    new Question("Le prénom de ma soeur ?", [
+        { text: "Jeanne", valid: false },
+        { text: "Elise", valid: true },
+        { text: "Michelle", valid: false },
+        { text: "Jean-claude", valid: false },
+    ], 2),
     new Question("J'ai déjà fais un rêve érotique avec toi ?", [
         { text: 'Oui', valid: true },
         { text: 'Non', valid: false },
-    ], 2, 1),
+    ], 2),
     new Question("Qu'est-ce que j'adore chez toi ?", [
         { text: 'Tes yeux', valid: true },
         { text: 'Ton sourire', valid: true },
@@ -116,12 +173,14 @@ const questions = [
         { text: 'Ton charisme', valid: true },
         { text: 'Ton élégance', valid: true },
         { text: 'Tes bisous', valid: true },
-    ], 8, 2),
+    ], 8),
     new Question("Est-ce que j'ai envie de t'embrasser là, maintenant, tout de suite, incessamment sous peu ?", [
         { text: 'Oui', valid: true },
         { text: 'Non', valid: false },
-    ], 2, 2),
+    ], 2),
 ];
+
+console.log(questions.length);
 
 let currentIndex = 0;   // Index de la question en cours
 let hintIndex = 0;      // Index de l'indice en cours
